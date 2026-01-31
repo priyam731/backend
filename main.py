@@ -9,7 +9,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://flowcraft-zeta.vercel.app/"],  # React dev server
+    allow_origins=[
+        "https://flowcraft-zeta.vercel.app",  # Production frontend
+        "http://localhost:3000",  # Local development
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
